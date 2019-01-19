@@ -106,7 +106,7 @@ def parser_choose(abbr, html, torrent_path):
 
 
 # 根据网站以及种子id下载种子
-def download_torrent(host, tid, cookie):
+def download_torrent(host, tid, cookie, abbr):
 
     download_url = "{host}/download.php?id={tid}".format(host=host, tid=tid)
     response = get_response(download_url, cookie)
@@ -124,12 +124,15 @@ def download_torrent(host, tid, cookie):
         exit(0)
     file_path = config.save_path + '\\%s.torrent' % origin_filename
 
-    # 传给待发布的站点的种子名称
+    # 传给待发布的站点的种子名称,有的时候源网站是中文种子，解析不出来？替换成源网站简称+id
     filename = ' '.join(
         re.sub(
-            r'^\[.{3,10}?\]|.mp4$|.mkv$|\[|\]|[^-\w]|[\u4e00-\u9fff]',
+            r'^\[.{3,10}?\]|.mp4$|.mkv$|\[|\]|[^-(a-zA-Z0-9)]|[\u4e00-\u9fff]',
             ' ',
             origin_filename).split('.')).lstrip()
+    if filename == '':
+        filename = abbr+' '+tid
+        
     back_file_path = config.backup_path + '\\%s.torrent' % filename
 
     try:
@@ -212,10 +215,12 @@ def main(origin_url):
 
     host = origin_site['domain']
     tid = get_id(origin_url)
+    
+    short_name = origin_site['abbr']
 
     print('下载原始网站种子……')
     # 返回待上传种子的绝对路径
-    filename = download_torrent(host, tid, origin_cookie)
+    filename = download_torrent(host, tid, origin_cookie, short_name)
 
     print('正在解析种子……')
     try:
