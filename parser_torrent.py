@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Author:Chengli
 
 '''
 为了匹配ut传过来的消息，根据torrent信息返回种子内容下载的：
