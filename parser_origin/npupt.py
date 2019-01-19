@@ -31,7 +31,7 @@ def parser_html(html, torrent_path):
     descr = to_bbcode(str(soup.select('#kdescr')[0]).replace(ad, ''))
 
     try:
-        link = re.search(r'◎豆瓣链接.*douban.com/subject/(\d{8})', descr)
+        link = re.search(r'◎豆瓣链接.*douban.com/subject/(\d{7,8})', descr)
         link = ('https://movie.douban.com/subject/' + link.group(1)+'/')
         descr = get_descr.get_full_descr(link, torrent_path)
     except Exception:
