@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# Spyder Editor
-#
-# This is a temporary script file.
-#
 # utorrent 执行代码 "C:\Users\CL\hudbt\hudbt.bat" "%D" "%N"
 
 import sys

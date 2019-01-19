@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Author:Chengli
 
 '''
 根据parser_torrent返回来的文件名进行mediainfo的获取，前提是有豆瓣链接否则太乱了

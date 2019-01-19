@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Author:Chengli
 
 '''
 
@@ -84,7 +83,7 @@ def change_to_ss(number):
 
 if __name__ == "__main__":
 
-	file = r'C:\Users\CL\Videos\[喜宴]The.Wedding.Banquet.1993.BluRay.720p.x264.AC3-CnSCG[国语中字2.8G].mkv'
-	img_ = r'C:\Users\CL\hudbt\test.jpg'
+	file = r'./test.mkv'
+	img_ = r'./test.jpg'
 	get_picture(file, img_)
 

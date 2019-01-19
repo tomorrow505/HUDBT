@@ -3,5 +3,4 @@ torrent_parser
 html2bbcode
 BeautifulSoup
 pymediainfo
-
 ffmpeg
