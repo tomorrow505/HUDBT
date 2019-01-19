@@ -189,12 +189,13 @@ def upload_torrent(raw_info, params=None, data=None, files=None):
 
     print('获取上传种子下载链接……')
     seed_torrent_download_id = get_id(des_post.url)
+    short_name = hudbt['abbr']
     if seed_torrent_download_id == 0:
         sys.exit(0)
     else:
         # 重新下种子到指定目录，完成做种，后边还可以检测，但是这里没有做续种有没有完成的检测
         print('准备下载蝴蝶种子！ id = %s' % seed_torrent_download_id)
-        download_torrent(hudbt['domain'], seed_torrent_download_id, des_cookie)
+        download_torrent(hudbt['domain'], seed_torrent_download_id, des_cookie,short_name)
 
 
 # 检查指定目录下有没有标志下载完成的文件
