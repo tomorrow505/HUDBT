@@ -37,7 +37,7 @@ def parser_html(html, torrent_path):
         descr = get_descr.get_full_descr(link, torrent_path)
     except Exception:
         try:
-            link_1 = re.search('.*imdb.com/title/(tt\d{7, 8})', descr)
+            link_1 = re.search('.*imdb.com/title/(tt\d{7,8})', descr)
             link_1 = 'https://www.imdb.com/title/'+link_1.group(1)+'/'
             descr = get_descr.get_full_descr(link_1, torrent_path)
         except Exception:
