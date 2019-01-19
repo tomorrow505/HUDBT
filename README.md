@@ -64,4 +64,4 @@
 
 测试环境：win10+ut2.2.1
 
-使用：打开server_main(单线程)，或者tk_server(多线程)
+使用：直接运行打开server_multi(单线程)，或者tk_server，会开线程执行(多线程)
