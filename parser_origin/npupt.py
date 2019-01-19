@@ -32,7 +32,11 @@ def parser_html(html, torrent_path):
 
     try:
 <<<<<<< HEAD
+<<<<<<< HEAD
         link = re.search(r'.*douban.com/subject/(\d{8})', descr)
+=======
+        link = re.search(r'◎豆瓣链接.*douban.com/subject/(\d{7,8})', descr)
+>>>>>>> 89ee45c83bf04b032af0ed9649648009693fc440
 =======
         link = re.search(r'◎豆瓣链接.*douban.com/subject/(\d{7,8})', descr)
 >>>>>>> 89ee45c83bf04b032af0ed9649648009693fc440
