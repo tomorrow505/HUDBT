@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Author:Chengli
 
 from tkinter import *
 import tkinter
