@@ -1,0 +1,7 @@
+selenium(非必须)
+torrent_parser
+html2bbcode
+BeautifulSoup
+pymediainfo
+
+ffmpeg
