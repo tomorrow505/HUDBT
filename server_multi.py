@@ -128,7 +128,7 @@ def download_torrent(host, tid, cookie, abbr):
         re.sub(
             r'^\[.{3,10}?\]|.mp4$|.mkv$|\[|\]|[^-(a-zA-Z0-9)]|[\u4e00-\u9fff]',
             ' ',
-            origin_filename).split('.').split(' ')).lstrip()
+            origin_filename).split('.')).lstrip()
     if filename == '':
         filename = abbr+' '+tid
         
