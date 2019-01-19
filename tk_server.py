@@ -11,6 +11,7 @@ def buttonclick1():
     text = var.get()
     t1 = server_multi.Task(text)
     t1.start()
+    var.set('')
 
 
 def on_entry_click(event):
