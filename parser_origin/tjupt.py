@@ -33,12 +33,12 @@ def parser_html(html, torrent_path):
     descr = descr.replace(ad, '')
     descr = to_bbcode(descr)
     try:
-        link = re.search('.*douban.com/subject/(\d{8})', descr)
+        link = re.search('.*douban.com/subject/(\d{7,8})', descr)
         link = ('https://movie.douban.com/subject/'+link.group(1)+'/')
         descr = get_descr.get_full_descr(link, torrent_path)
     except Exception as exc:
         try:
-            link_1 = re.search('.*imdb.com/title/(tt\d{7, 8})', descr)
+            link_1 = re.search('.*imdb.com/title/(tt\d{7,8})', descr)
             link_1 = 'https://www.imdb.com/title/'+link_1.group(1)+'/'
             descr = get_descr.get_full_descr(link_1, torrent_path)
         except Exception:
