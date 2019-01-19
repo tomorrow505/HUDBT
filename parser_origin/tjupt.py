@@ -33,7 +33,7 @@ def parser_html(html, torrent_path):
     descr = descr.replace(ad, '')
     descr = to_bbcode(descr)
     try:
-        link = re.search('◎豆瓣链接.*douban.com/subject/(\d{8})', descr)
+        link = re.search('◎豆瓣链接.*douban.com/subject/(\d{7,8})', descr)
         link = ('https://movie.douban.com/subject/'+link.group(1)+'/')
         descr = get_descr.get_full_descr(link, torrent_path)
         raw_info['douban'] = 1
