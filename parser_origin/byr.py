@@ -29,19 +29,11 @@ def parser_html(html, torrent_path):
     descr = to_bbcode(str(soup.find('div', id='kdescr')))
     try:
         # 这里检验的re的pattern有点问题，不过可以用，如果有豆瓣信息，自己构造简介
-<<<<<<< HEAD
-<<<<<<< HEAD
         link = re.search('.*douban.com/subject/(\d{8})', descr)
-=======
-        link = re.search('◎豆瓣链接.*douban.com/subject/(\d{7,8})', descr)
->>>>>>> 89ee45c83bf04b032af0ed9649648009693fc440
-=======
-        link = re.search('◎豆瓣链接.*douban.com/subject/(\d{7,8})', descr)
->>>>>>> 89ee45c83bf04b032af0ed9649648009693fc440
         link = ('https://movie.douban.com/subject/'+link.group(1)+'/')
         descr = get_descr.get_full_descr(link, torrent_path)
     except Exception:
-                try:
+        try:
             link_1 = re.search('.*imdb.com/title/(tt\d{7, 8})', descr)
             link_1 = 'https://www.imdb.com/title/'+link_1.group(1)+'/'
             descr = get_descr.get_full_descr(link_1, torrent_path)
