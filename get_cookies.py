@@ -10,7 +10,7 @@ options.add_argument(
     '--user-data-dir=C:/Users/CL/AppData/Local/Google/Chrome/User Data')
 
 driver = webdriver.Chrome(
-    executable_path='C:\\Users\\CL\\Documents\\pachong\\chromedriver_win32\\chromedriver.exe',
+    executable_path='*\\chromedriver.exe', # 指向你自己下载的chromedriver的目录
     options=options)
 
 
