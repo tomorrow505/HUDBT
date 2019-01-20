@@ -28,11 +28,11 @@ def get_picture(file_loc, img_loc):
 		time.append(change_to_ss(midle))
 
 	for i in range(12):
-		base_command = 'ffmpeg -ss {time} -i {file} -vframes 1 -y -vf "scale=500:-1" out-{i}.jpg'
+		base_command = 'ffmpeg -ss {time} -i {file} -vframes 1 -y -vf "scale=500:-1" out-{i}.jpg 2> NUL'
 		ffmpeg_sh = base_command.format(time=time[i], file=file_loc, i=i)
 		os.system(ffmpeg_sh)
 	set_par = 'tile=3x4:nb_frames=0:padding=5:margin=5:color=random'
-	base_command = 'ffmpeg -i "out-%d.jpg" -y -filter_complex "{set}" {img_loc}'.format(set=set_par, img_loc=img_loc,)
+	base_command = 'ffmpeg -i "out-%d.jpg" -y -filter_complex "{set}" {img_loc} 2> NUL'.format(set=set_par, img_loc=img_loc,)
 
 	os.system(base_command)
 
