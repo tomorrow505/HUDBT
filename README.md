@@ -34,9 +34,9 @@
 
 ## 目录文件以及功能说明：
 
-    | HUDBT
+.    | HUDBT
 
-        | icon
++ ——       | icon
             | bitbug_favicon # tkinter图标
 
         | parser_origin # 用来解析网页获取发布信息
