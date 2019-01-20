@@ -30,7 +30,7 @@ def get_info_from_torrent(file):
 
 if __name__ == "__main__":
 
-    # file_ = r'C:\Users\CL\Desktop\种子\[TTG] Game.of.Thrones.S01.Pack.HDTV.720p.x264.AAC-PHD.torrent'
+    # file_ = r'C:\test.torrent'
     file_ = input('请输入一个种子的绝对路径')
     print(get_info_from_torrent(file_))
 
