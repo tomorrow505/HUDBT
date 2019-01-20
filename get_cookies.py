@@ -7,10 +7,10 @@ import json
 options = webdriver.ChromeOptions()
 
 options.add_argument(
-    '--user-data-dir=C:/Users/CL/AppData/Local/Google/Chrome/User Data')
+    '--user-data-dir=C:/Users/Username/AppData/Local/Google/Chrome/User Data')
 
 driver = webdriver.Chrome(
-    executable_path='*\\chromedriver.exe', # 指向你自己下载的chromedriver的目录
+    executable_path='C:\\chromedriver.exe', # 指向你自己下载的chromedriver的目录
     options=options)
 
 
