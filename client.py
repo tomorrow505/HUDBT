@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# utorrent 执行代码 "C:\Users\CL\hudbt\hudbt.bat" "%D" "%N"
+# utorrent 执行代码 "C:\hudbt\hudbt.exe" "%D" "%N"
 
 import sys
 import config
