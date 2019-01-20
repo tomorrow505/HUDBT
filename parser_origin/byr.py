@@ -32,8 +32,8 @@ def parser_html(html, torrent_path):
         # 如果有豆瓣信息，自己构造简介
         link = re.search('.*douban.com/subject/(\d{7,8})', descr)
         link = ('https://movie.douban.com/subject/'+link.group(1)+'/')
-        flag = 1
         descr = get_descr.get_full_descr(link, torrent_path)
+        flag = 1
     except Exception:
         pass
     if flag == 0:
