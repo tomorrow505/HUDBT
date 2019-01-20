@@ -34,27 +34,9 @@
 
 ## 目录文件以及功能说明：
 
-+-- _config.yml
-+-- _drafts
-|   +-- begin-with-the-crazy-ideas.textile
-|   +-- on-simplicity-in-technology.markdown
-+-- _includes
-|   +-- footer.html
-|   +-- header.html
-+-- _layouts
-|   +-- default.html
-|   +-- post.html
-+-- _posts
-|   +-- 2007-10-29-why-every-programmer-should-play-nethack.textile
-|   +-- 2009-04-26-barcamp-boston-4-roundup.textile
-+-- _data
-|   +-- members.yml
-+-- _site
-+-- index.html
-
     | HUDBT
 
-+——       | icon
+       | icon
             | bitbug_favicon # tkinter图标
 
         | parser_origin # 用来解析网页获取发布信息
