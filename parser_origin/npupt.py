@@ -29,13 +29,16 @@ def parser_html(html, torrent_path):
     # 简介
     ad = str(soup.find('div', class_='well small'))
     descr = to_bbcode(str(soup.select('#kdescr')[0]).replace(ad, ''))
-
+    
+    flag = 0
     try:
-        link = re.search(r'.*douban.com/subject/(\d{8})', descr)
-        link = re.search(r'◎豆瓣链接.*douban.com/subject/(\d{7,8})', descr)
+        link = re.search(r'.*douban.com/subject/(\d{7,8})', descr)
         link = ('https://movie.douban.com/subject/' + link.group(1)+'/')
         descr = get_descr.get_full_descr(link, torrent_path)
+        flag = 1
     except Exception:
+        pass
+    if flag == 0:
         try:
             link_1 = re.search('.*imdb.com/title/(tt\d{7,8})', descr)
             link_1 = 'https://www.imdb.com/title/'+link_1.group(1)+'/'
