@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Author:Chengli
 
 from bs4 import BeautifulSoup
 from html2bbcode.parser import HTML2BBCode
@@ -28,6 +27,7 @@ def parser_html(html, torrent_path):
     raw_info['info'] = to_bbcode(str(soup.select('td .rowfollow')[4]))
 
     # 简介
+    flag = 0 
     descr = str(soup.find('div', id='kdescr'))
     ad = str(soup.find('div', id='ad_torrentdetail'))
     descr = descr.replace(ad, '')
@@ -36,7 +36,10 @@ def parser_html(html, torrent_path):
         link = re.search('.*douban.com/subject/(\d{7,8})', descr)
         link = ('https://movie.douban.com/subject/'+link.group(1)+'/')
         descr = get_descr.get_full_descr(link, torrent_path)
+        flag == 1
     except Exception as exc:
+        pass
+    if flag == 0:
         try:
             link_1 = re.search('.*imdb.com/title/(tt\d{7,8})', descr)
             link_1 = 'https://www.imdb.com/title/'+link_1.group(1)+'/'
