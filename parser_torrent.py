@@ -20,8 +20,10 @@ def get_info_from_torrent(file):
         file_path = ''
         files = info['files']
         for file in files:
-            if file['length'] > biggest and (file['path'][0].endswith('mp4'or 'mkv'or 'avi'or 'ts' or 'mov')):
-                file_path = file['path'][0]
+            if file['length'] > biggest 
+                if file['path'][-1].endswith(('mp4','mkv','avi','ts','mov')):
+                    biggest = file['length']
+                    file_path = '\\'.join(file['path'])
         file_path = file_dir+'\\'+file_path
         return file_dir, file_path
     else:
